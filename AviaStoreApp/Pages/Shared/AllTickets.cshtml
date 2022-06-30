@@ -1,0 +1,13 @@
+﻿@model Ticket
+
+ <div class = "border col-lg-4">
+                <h2>Тип: @Model.Type</h2>
+                <p>Цена: @Model.Price.ToString("c")</p>
+                <p>Авиакомпания: @Model.Flight.Airline</p>
+                <p>Авиакомпания: @Model.Flight.AirportSend</p>
+                <p>Авиакомпания: @Model.Flight.AirportArrival</p>
+
+                <p><a class="btn btn-warning" asp-controller = "ShopCart" asp-action = "addToCart" asp-route-id = "@Model.Id">Добавить в корзину</a></p>
+                <p></p>
+            </div>
+            

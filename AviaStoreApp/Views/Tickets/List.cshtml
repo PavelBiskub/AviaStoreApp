@@ -1,0 +1,16 @@
+﻿@using AviaStoreApp.Data.Models
+@{
+    Layout = "_Layout";
+}
+
+
+    <h1>Билеты:</h1>
+    <h3>@Model.currFlight</h3>
+    <div class = "row mt-5 mb-2">
+    @{
+        foreach (Ticket ticket in Model.AllTickets)
+        {
+            @Html.Partial("AllTickets", ticket);
+        }
+    }
+    </div>

@@ -1,0 +1,19 @@
+﻿@using AviaStoreApp.ViewModels
+@model ShopCartViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container">
+	@foreach (var el in Model.shopCart.ListShopItems){
+		<div class = "alter alter-warning mt-3">
+			<b>Билет:</b> @el.Ticket.Name<br />
+			<b>Цена:</b> @el.Ticket.Price.ToString("c")<br />
+		</div>
+
+	}
+	<hr />
+	<a class = "btn btn-danger" asp-controller="Order" asp-action = "Checkout">Оплатить</a>
+</div>
